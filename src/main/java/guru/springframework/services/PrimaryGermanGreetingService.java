@@ -1,5 +1,6 @@
 package guru.springframework.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,18 @@ import org.springframework.stereotype.Service;
 public class PrimaryGermanGreetingService implements GreetingService {
 
     private GreetingRepository greetingRepository;
+
+
+    // This works w/ the setter-based DI
+    // @Autowired
+    // public void setGreetingRepository(GreetingRepository greetingRepository) {
+    //   this.greetingRepository = greetingRepository;
+    // }
+
+    // This also works w/ the constructor-based DI
+    public PrimaryGermanGreetingService(GreetingRepository greetingRepository) {
+      this.greetingRepository = greetingRepository;
+    }
 
     @Override
     public String sayGreeting() {
