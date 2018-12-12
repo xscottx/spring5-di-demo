@@ -10,10 +10,11 @@ import guru.springframework.services.GreetingService;
 public class PropertyInjectedController {
 
   @Autowired
-  // @Qualifier("greetingServiceImpl")  Don't need this if the property name matches that of the qualifier, ie. the 'Impl''
-  public GreetingService greetingServiceImpl;
+  @Qualifier("greetingServiceImpl")  // Don't need this if the property name matches that of the qualifier, ie. the 'Impl''
+  // Primary bean will override property name convention for property-based injection
+  public GreetingService greetingService;
 
   public String sayHello() {
-    return greetingServiceImpl.sayGreeting();
+    return greetingService.sayGreeting();
   }
 }
