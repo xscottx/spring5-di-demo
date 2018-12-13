@@ -1,0 +1,31 @@
+name: Scott
+names:
+  - Scott
+  - Paul
+  - Ringo
+
+pound_sign: "#"
+
+book:
+  author: Joe Buck
+  publisher: random house
+
+truth: yes
+another_truth: True
+more_true: true
+
+fales: no #No, false, FALSE
+
+string_val: "This is it's quote"
+
+# New lines
+include_lines: |
+  asdf asdf asdf
+  kjdlkfj lkjdlkj lkjdlkj
+  lkjd dfd
+
+# 1 continuous line
+ignore_new_lines: >
+  this is
+  just one long 
+  string

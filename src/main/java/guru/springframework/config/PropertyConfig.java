@@ -14,10 +14,10 @@ import guru.springframework.beans.FakeJmsBroker;
 
 @Configuration
 // specify the propertysource path and filename
-@PropertySources({
-  @PropertySource("classpath:datasource.properties"),
-  @PropertySource("classpath:jms.properties")
-})
+// @PropertySources({
+//   @PropertySource("classpath:datasource.properties"),
+//   @PropertySource("classpath:jms.properties")
+// })
 public class PropertyConfig {
 
   // Read from datasource.properties
@@ -61,11 +61,5 @@ public class PropertyConfig {
     fakeJmsBroker.setPassword(jmsPassword);
     fakeJmsBroker.setUrl(jmsUrl);
     return fakeJmsBroker;
-  }
-
-  @Bean
-  public static PropertySourcesPlaceholderConfigurer properties() {
-    PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-    return propertySourcesPlaceholderConfigurer;
   }
 }
